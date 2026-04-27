@@ -1,0 +1,15 @@
+node_modules/
+.next/
+out/
+build/
+.DS_Store
+.env*.local
+*.tsbuildinfo
+next-env.d.ts
+.vercel
+
+# Local-only working folders (not part of the website)
+.sixth/
+brand/
+frontend_design/
+marketing-psychology/
