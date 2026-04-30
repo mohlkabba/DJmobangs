@@ -9,7 +9,24 @@ export const metadata: Metadata = {
     "Send a booking request for your wedding, club night, private party, corporate event or festival. Bespoke proposals returned within 24 hours.",
 };
 
-export default function BookingPage() {
+const eventTypeBySlug: Record<string, string> = {
+  weddings: "Wedding",
+  private: "Private Party",
+  "club-nights": "Club Night",
+  corporate: "Corporate Event",
+  festivals: "Festival",
+};
+
+export default function BookingPage({
+  searchParams,
+}: {
+  searchParams?: { type?: string };
+}) {
+  const initialEventType =
+    searchParams?.type && eventTypeBySlug[searchParams.type]
+      ? eventTypeBySlug[searchParams.type]
+      : "";
+
   return (
     <>
       <PageHeader
@@ -95,7 +112,7 @@ export default function BookingPage() {
 
             {/* Right: form */}
             <Reveal className="col-span-12 lg:col-span-8" delay={100}>
-              <BookingForm />
+              <BookingForm initialEventType={initialEventType} />
             </Reveal>
           </div>
         </div>

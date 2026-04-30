@@ -39,6 +39,22 @@ export function Button({
 }: Props) {
   const classes = cn(base, variants[variant], sizes[size], className);
   if (href) {
+    const isExternal = /^https?:\/\//.test(href);
+
+    if (isExternal) {
+      return (
+        <a href={href} target="_blank" rel="noopener noreferrer" className={classes}>
+          <span>{children}</span>
+          <span
+            aria-hidden
+            className="transition-transform duration-300 group-hover:translate-x-1"
+          >
+            â†’
+          </span>
+        </a>
+      );
+    }
+
     return (
       <Link href={href} className={classes}>
         <span>{children}</span>

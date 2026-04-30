@@ -46,8 +46,11 @@ const empty: FormState = {
   message: "",
 };
 
-export function BookingForm() {
-  const [data, setData] = useState<FormState>(empty);
+export function BookingForm({ initialEventType = "" }: { initialEventType?: string }) {
+  const [data, setData] = useState<FormState>({
+    ...empty,
+    eventType: initialEventType,
+  });
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState("");
