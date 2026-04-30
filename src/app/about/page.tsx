@@ -8,7 +8,7 @@ import { Marquee } from "@/components/Marquee";
 export const metadata: Metadata = {
   title: "About | DJ Mobangs",
   description:
-    "The story, the sound, and the philosophy behind DJ Mobangs — over 5 years and 100+ events of crafting unforgettable nights.",
+    "The story, the sound, and the philosophy behind DJ Mobangs — over 10 years and 200+ events of crafting unforgettable nights.",
 };
 
 const genres = [
@@ -58,7 +58,7 @@ export default function AboutPage() {
         }
         description={
           <>
-            DJ Mobangs is a selector, programmer and performer. Five-plus years
+            DJ Mobangs is a selector, programmer and performer. Ten-plus years
             on the road, a thousand small decisions every night, and a single
             obsession: the next track.
           </>
@@ -69,8 +69,8 @@ export default function AboutPage() {
       <section className="border-b border-bone/10 py-12 md:py-16">
         <div className="container-px mx-auto max-w-[1500px] grid grid-cols-2 md:grid-cols-4 gap-y-10 md:gap-x-10">
           {[
-            { k: "5+", v: "Years experience", note: "And counting" },
-            { k: "100+", v: "Events played", note: "Across 12 countries" },
+            { k: "10+", v: "Years experience", note: "And counting" },
+            { k: "200+", v: "Events played", note: "Across 12 countries" },
             { k: "3", v: "Core arenas", note: "Weddings · Clubs · Private" },
             { k: "1", v: "Mission", note: "Move the room" },
           ].map((s, i) => (

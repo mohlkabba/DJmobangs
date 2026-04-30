@@ -135,8 +135,8 @@ export default function HomePage() {
             {/* Stats strip */}
             <div className="col-span-12 mt-8 grid grid-cols-2 md:grid-cols-4 border-t border-bone/15 pt-8 gap-y-6 animate-fade-up delay-500">
               {[
-                { k: "5+", v: "Years touring" },
-                { k: "100+", v: "Events played" },
+                { k: "10+", v: "Years touring" },
+                { k: "200+", v: "Events played" },
                 { k: "12", v: "Countries" },
                 { k: "∞", v: "Late nights" },
               ].map((s, i) => (

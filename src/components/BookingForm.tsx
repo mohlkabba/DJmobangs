@@ -183,13 +183,13 @@ export function BookingForm({ initialEventType = "" }: { initialEventType?: stri
             required
             value={data.eventType}
             onChange={(e) => update("eventType", e.target.value)}
-            className={cn(inputCls, "appearance-none cursor-pointer pr-10")}
+            className={selectCls}
           >
-            <option value="" disabled>
+            <option value="" disabled className={optionCls}>
               Choose a format…
             </option>
             {eventTypes.map((t) => (
-              <option key={t} value={t}>
+              <option key={t} value={t} className={optionCls}>
                 {t}
               </option>
             ))}
@@ -225,13 +225,13 @@ export function BookingForm({ initialEventType = "" }: { initialEventType?: stri
             id="budget"
             value={data.budget}
             onChange={(e) => update("budget", e.target.value)}
-            className={cn(inputCls, "appearance-none cursor-pointer pr-10")}
+            className={selectCls}
           >
-            <option value="" disabled>
+            <option value="" disabled className={optionCls}>
               Select range…
             </option>
             {budgetRanges.map((b) => (
-              <option key={b} value={b}>
+              <option key={b} value={b} className={optionCls}>
                 {b}
               </option>
             ))}
@@ -277,6 +277,11 @@ export function BookingForm({ initialEventType = "" }: { initialEventType?: stri
 
 const inputCls =
   "w-full bg-transparent border-0 border-b border-bone/25 text-bone placeholder-bone/30 px-0 py-3 focus:outline-none focus:border-gold transition-colors text-base";
+const selectCls = cn(
+  inputCls,
+  "appearance-none cursor-pointer pr-10 [color-scheme:dark] [&>option]:bg-ink [&>option]:text-bone"
+);
+const optionCls = "bg-ink text-bone";
 
 function Field({
   label,
