@@ -10,16 +10,41 @@ const empty: State = { name: "", email: "", subject: "", message: "" };
 export function ContactForm() {
   const [data, setData] = useState<State>(empty);
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState("");
 
   function update<K extends keyof State>(k: K, v: State[K]) {
     setData((d) => ({ ...d, [k]: v }));
   }
 
-  function onSubmit(e: FormEvent) {
+  async function onSubmit(e: FormEvent) {
     e.preventDefault();
-    // TODO: replace with real submission handler
-    console.log("Contact message submitted:", data);
-    setSubmitted(true);
+    setSubmitting(true);
+    setError("");
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+
+      const result = (await response.json()) as { error?: string };
+
+      if (!response.ok) {
+        throw new Error(result.error || "Unable to send message.");
+      }
+
+      setSubmitted(true);
+    } catch (err) {
+      setError(
+        err instanceof Error
+          ? err.message
+          : "Unable to send message. Please try WhatsApp instead."
+      );
+    } finally {
+      setSubmitting(false);
+    }
   }
 
   if (submitted) {
@@ -100,14 +125,20 @@ export function ContactForm() {
       <div className="mt-10 flex justify-end">
         <button
           type="submit"
+          disabled={submitting}
           className="group inline-flex items-center gap-2 bg-gold text-ink px-7 py-3.5 text-sm font-medium tracking-wide hover:bg-gold-light hover:-translate-y-0.5 transition-all"
         >
-          Send message
+          {submitting ? "Sending..." : "Send message"}
           <span aria-hidden className="transition-transform duration-300 group-hover:translate-x-1">
             →
           </span>
         </button>
       </div>
+      {error && (
+        <p className="mt-5 text-sm text-red-300" role="alert">
+          {error}
+        </p>
+      )}
     </form>
   );
 }

@@ -49,16 +49,41 @@ const empty: FormState = {
 export function BookingForm() {
   const [data, setData] = useState<FormState>(empty);
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState("");
 
   function update<K extends keyof FormState>(k: K, v: FormState[K]) {
     setData((d) => ({ ...d, [k]: v }));
   }
 
-  function handleSubmit(e: FormEvent) {
+  async function handleSubmit(e: FormEvent) {
     e.preventDefault();
-    // TODO: replace with real submission (email service, API route, Formspree, Resend, etc.)
-    console.log("Booking enquiry submitted:", data);
-    setSubmitted(true);
+    setSubmitting(true);
+    setError("");
+
+    try {
+      const response = await fetch("/api/booking", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+
+      const result = (await response.json()) as { error?: string };
+
+      if (!response.ok) {
+        throw new Error(result.error || "Unable to send booking request.");
+      }
+
+      setSubmitted(true);
+    } catch (err) {
+      setError(
+        err instanceof Error
+          ? err.message
+          : "Unable to send booking request. Please try WhatsApp instead."
+      );
+    } finally {
+      setSubmitting(false);
+    }
   }
 
   if (submitted) {
@@ -229,14 +254,20 @@ export function BookingForm() {
         </p>
         <button
           type="submit"
+          disabled={submitting}
           className="group inline-flex items-center justify-center gap-2 bg-gold text-ink px-8 py-4 text-sm font-medium tracking-wide hover:bg-gold-light hover:-translate-y-0.5 transition-all duration-300 hover:shadow-[0_8px_30px_-8px_rgba(229,179,88,0.5)]"
         >
-          Send booking request
+          {submitting ? "Sending..." : "Send booking request"}
           <span aria-hidden className="transition-transform duration-300 group-hover:translate-x-1">
             →
           </span>
         </button>
       </div>
+      {error && (
+        <p className="mt-5 text-sm text-red-300" role="alert">
+          {error}
+        </p>
+      )}
     </form>
   );
 }
