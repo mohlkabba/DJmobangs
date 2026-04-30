@@ -115,7 +115,7 @@ export function Navbar() {
       {/* Mobile drawer */}
       <div
         className={cn(
-          "lg:hidden fixed inset-x-0 top-20 h-[calc(100svh-5rem)] overflow-y-auto border-t border-bone/10 bg-ink/98 backdrop-blur-xl transition-all duration-500 ease-out",
+          "lg:hidden fixed inset-x-0 top-20 h-[calc(100svh-5rem)] overflow-y-auto border-t border-bone/10 bg-ink transition-all duration-500 ease-out",
           open
             ? "translate-y-0 opacity-100 pointer-events-auto"
             : "-translate-y-3 opacity-0 pointer-events-none"
@@ -131,7 +131,7 @@ export function Navbar() {
                 href={l.href}
                 style={{ animationDelay: `${i * 40}ms` }}
                 className={cn(
-                  "flex items-baseline justify-between py-3 border-b border-bone/10 transition-colors",
+                  "flex items-baseline justify-between py-3 border-b border-bone/10 bg-transparent transition-colors [-webkit-tap-highlight-color:transparent]",
                   open && "animate-fade-up",
                   active ? "text-gold" : "text-bone hover:text-gold"
                 )}
