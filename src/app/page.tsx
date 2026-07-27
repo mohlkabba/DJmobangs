@@ -13,24 +13,24 @@ const featured = [
     blurb: "Curated sets that move with your story — first dance to last call.",
     href: "/experiences#weddings",
     variant: "warm" as const,
-    src: "/gallery/djmobangs-live.jpeg",
-    objectPosition: "52% center",
+    src: "/gallery/djmobangs-wedding-mic.jpeg",
+    objectPosition: "50% center",
   },
   {
     title: "Club Nights",
     blurb: "Peak-hour Afro-house, Amapiano and global club energy.",
     href: "/experiences#club-nights",
     variant: "deep" as const,
-    src: "/gallery/djmobangs-decks.jpeg",
-    objectPosition: "48% center",
+    src: "/gallery/djmobangs-green-glow.jpeg",
+    objectPosition: "center 45%",
   },
   {
     title: "Private Parties",
     blurb: "Bespoke programming for tastemakers and inner circles.",
     href: "/experiences#private",
     variant: "cool" as const,
-    src: "/gallery/djmobangs-live.jpeg",
-    objectPosition: "44% center",
+    src: "/gallery/djmobangs-booth.jpeg",
+    objectPosition: "45% center",
   },
 ];
 
@@ -275,8 +275,8 @@ export default function HomePage() {
                 variant="warm"
                 className="aspect-[4/5] md:aspect-[7/8.4] h-full w-full"
                 index={1}
-                src="/gallery/djmobangs-live.jpeg"
-                objectPosition="50% center"
+                src="/gallery/djmobangs-dancefloor.jpeg"
+                objectPosition="center 40%"
               />
             </Reveal>
             <Reveal className="col-span-6 md:col-span-5" delay={100}>
@@ -285,8 +285,8 @@ export default function HomePage() {
                 variant="deep"
                 className="aspect-[5/4]"
                 index={2}
-                src="/gallery/djmobangs-decks.jpeg"
-                objectPosition="45% center"
+                src="/gallery/djmobangs-reception.jpeg"
+                objectPosition="center 40%"
               />
             </Reveal>
             <Reveal className="col-span-6 md:col-span-5" delay={200}>
@@ -295,8 +295,8 @@ export default function HomePage() {
                 variant="cool"
                 className="aspect-[5/4]"
                 index={3}
-                src="/gallery/djmobangs-live.jpeg"
-                objectPosition="58% center"
+                src="/gallery/djmobangs-wedding-mic.jpeg"
+                objectPosition="center 35%"
               />
             </Reveal>
           </div>

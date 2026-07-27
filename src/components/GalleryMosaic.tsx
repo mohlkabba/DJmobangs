@@ -34,8 +34,8 @@ const items: Item[] = [
     category: "Weddings",
     variant: "deep",
     span: "md:col-span-5 aspect-[4/3]",
-    src: "/gallery/djmobangs-decks.jpeg",
-    objectPosition: "45% center",
+    src: "/gallery/djmobangs-wedding-mic.jpeg",
+    objectPosition: "center 30%",
   },
   {
     label: "Club Night",
@@ -43,8 +43,8 @@ const items: Item[] = [
     category: "Clubs",
     variant: "cool",
     span: "md:col-span-5 aspect-[4/3]",
-    src: "/gallery/djmobangs-live.jpeg",
-    objectPosition: "58% center",
+    src: "/gallery/djmobangs-green-glow.jpeg",
+    objectPosition: "center 45%",
   },
   {
     label: "Crowd Energy",
@@ -52,8 +52,8 @@ const items: Item[] = [
     category: "Crowds",
     variant: "warm",
     span: "md:col-span-4 aspect-square",
-    src: "/gallery/djmobangs-live.jpeg",
-    objectPosition: "62% center",
+    src: "/gallery/djmobangs-dancefloor.jpeg",
+    objectPosition: "center 35%",
   },
   {
     label: "Live Event",
@@ -66,12 +66,12 @@ const items: Item[] = [
   },
   {
     label: "Wedding Set",
-    caption: "Garden ceremony",
+    caption: "The reception",
     category: "Weddings",
     variant: "warm",
     span: "md:col-span-4 aspect-square",
-    src: "/gallery/djmobangs-live.jpeg",
-    objectPosition: "48% center",
+    src: "/gallery/djmobangs-reception.jpeg",
+    objectPosition: "center 40%",
   },
   {
     label: "Club Night",
@@ -79,8 +79,8 @@ const items: Item[] = [
     category: "Clubs",
     variant: "cool",
     span: "md:col-span-7 aspect-[16/10]",
-    src: "/gallery/djmobangs-decks.jpeg",
-    objectPosition: "50% center",
+    src: "/gallery/djmobangs-booth.jpeg",
+    objectPosition: "45% center",
   },
   {
     label: "Crowd Energy",
@@ -88,8 +88,8 @@ const items: Item[] = [
     category: "Crowds",
     variant: "deep",
     span: "md:col-span-5 aspect-[5/6]",
-    src: "/gallery/djmobangs-live.jpeg",
-    objectPosition: "57% center",
+    src: "/gallery/djmobangs-wedding-mic.jpeg",
+    objectPosition: "40% center",
   },
   {
     label: "Live Event",
@@ -97,8 +97,8 @@ const items: Item[] = [
     category: "Private",
     variant: "warm",
     span: "md:col-span-6 aspect-[4/3]",
-    src: "/gallery/djmobangs-decks.jpeg",
-    objectPosition: "44% center",
+    src: "/gallery/djmobangs-green-glow.jpeg",
+    objectPosition: "center 60%",
   },
   {
     label: "Wedding Set",
@@ -106,8 +106,8 @@ const items: Item[] = [
     category: "Private",
     variant: "deep",
     span: "md:col-span-6 aspect-[4/3]",
-    src: "/gallery/djmobangs-live.jpeg",
-    objectPosition: "54% center",
+    src: "/gallery/djmobangs-dancefloor.jpeg",
+    objectPosition: "center 55%",
   },
 ];
 

@@ -98,9 +98,9 @@ export default function AboutPage() {
                 label="DJ Mobangs"
                 variant="warm"
                 className="aspect-[4/5]"
-                caption="Portrait — backstage"
-                src="/gallery/djmobangs-live.jpeg"
-                objectPosition="52% center"
+                caption="Portrait — behind the decks"
+                src="/gallery/djmobangs-booth.jpeg"
+                objectPosition="45% center"
               />
             </div>
           </Reveal>

@@ -39,8 +39,8 @@ const experiences: Experience[] = [
     ],
     variant: "warm",
     caption: "ceremony · cocktail · reception",
-    src: "/gallery/djmobangs-live.jpeg",
-    objectPosition: "52% center",
+    src: "/gallery/djmobangs-wedding-mic.jpeg",
+    objectPosition: "50% center",
   },
   {
     id: "private",
@@ -57,8 +57,8 @@ const experiences: Experience[] = [
     ],
     variant: "deep",
     caption: "intimate · curated · all-night",
-    src: "/gallery/djmobangs-decks.jpeg",
-    objectPosition: "47% center",
+    src: "/gallery/djmobangs-booth.jpeg",
+    objectPosition: "45% center",
   },
   {
     id: "club-nights",
@@ -75,8 +75,8 @@ const experiences: Experience[] = [
     ],
     variant: "cool",
     caption: "peak hour · main floor",
-    src: "/gallery/djmobangs-live.jpeg",
-    objectPosition: "60% center",
+    src: "/gallery/djmobangs-green-glow.jpeg",
+    objectPosition: "center 45%",
   },
   {
     id: "corporate",
@@ -93,8 +93,8 @@ const experiences: Experience[] = [
     ],
     variant: "warm",
     caption: "brand · awards · launch",
-    src: "/gallery/djmobangs-decks.jpeg",
-    objectPosition: "42% center",
+    src: "/gallery/djmobangs-reception.jpeg",
+    objectPosition: "center 40%",
   },
   {
     id: "festivals",

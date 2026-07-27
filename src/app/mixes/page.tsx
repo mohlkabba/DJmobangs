@@ -111,15 +111,42 @@ export default function MixesPage() {
             </div>
           </Reveal>
 
-          <Reveal delay={100}>
-            <div className="shadow-[0_30px_90px_-50px_rgba(229,179,88,0.45)]">
-              <YouTubeChannelCard
-                title="DJ Mobangs Live"
-                eyebrow="Featured set"
-                description="Open the official YouTube channel for live recordings, behind-the-decks footage and full sets."
-              />
-            </div>
-          </Reveal>
+          <div className="grid grid-cols-12 gap-5 lg:gap-6 items-start">
+            {/* Live footage — portrait reel */}
+            <Reveal className="col-span-12 lg:col-span-5" delay={100}>
+              <div className="relative max-w-[420px] mx-auto lg:mx-0 overflow-hidden border border-bone/15 bg-ink-700 shadow-[0_30px_90px_-50px_rgba(229,179,88,0.45)]">
+                <video
+                  className="block w-full aspect-[9/16] object-cover"
+                  src="/video/djmobangs-live-set.mp4"
+                  poster="/video/djmobangs-live-set-poster.jpg"
+                  controls
+                  playsInline
+                  preload="metadata"
+                />
+                <div className="pointer-events-none absolute top-0 left-0 right-0 flex items-center justify-between p-4 text-[10px] font-mono uppercase tracking-wide3 text-bone/70">
+                  <span>DJ_MOBANGS / LIVE FOOTAGE</span>
+                  <span className="flex items-center gap-1.5">
+                    <span className="h-1.5 w-1.5 rounded-full bg-red-500 animate-pulse" />
+                    REC
+                  </span>
+                </div>
+              </div>
+              <p className="mt-4 max-w-[420px] mx-auto lg:mx-0 text-sm text-bone/60 leading-relaxed">
+                Club night, main floor — straight from the booth. Sound on.
+              </p>
+            </Reveal>
+
+            {/* YouTube channel */}
+            <Reveal className="col-span-12 lg:col-span-7" delay={180}>
+              <div className="shadow-[0_30px_90px_-50px_rgba(229,179,88,0.45)]">
+                <YouTubeChannelCard
+                  title="DJ Mobangs Live"
+                  eyebrow="Featured set"
+                  description="Open the official YouTube channel for live recordings, behind-the-decks footage and full sets."
+                />
+              </div>
+            </Reveal>
+          </div>
         </div>
       </section>
 
