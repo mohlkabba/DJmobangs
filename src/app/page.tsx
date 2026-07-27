@@ -79,7 +79,7 @@ export default function HomePage() {
         {/* Featured turntable — front-and-centre on right */}
         <div
           aria-hidden
-          className="block absolute right-[-38%] top-[18%] w-[92vw] max-w-[420px] opacity-25 sm:right-[-26%] sm:top-[14%] sm:w-[70vw] md:right-[-18%] md:w-[58vw] lg:right-[-10%] lg:top-[18%] lg:w-[42vw] lg:max-w-[520px] lg:opacity-100 xl:right-[2%] xl:top-[12%] z-0 pointer-events-none animate-fade-in"
+          className="block absolute right-[-38%] top-[18%] w-[92vw] max-w-[420px] opacity-25 sm:right-[-26%] sm:top-[14%] sm:w-[70vw] md:right-[-18%] md:w-[58vw] lg:right-[-8%] lg:top-[16%] lg:w-[40vw] lg:max-w-[500px] lg:opacity-50 xl:right-[0%] xl:top-[14%] z-0 pointer-events-none animate-fade-in [mask-image:linear-gradient(to_bottom,transparent_0%,black_18%,black_55%,transparent_95%)] [-webkit-mask-image:linear-gradient(to_bottom,transparent_0%,black_18%,black_55%,transparent_95%)]"
         >
           <Turntable />
         </div>
