@@ -99,8 +99,8 @@ export default function AboutPage() {
                 variant="warm"
                 className="aspect-[4/5]"
                 caption="Portrait — behind the decks"
-                src="/gallery/djmobangs-booth.jpeg"
-                objectPosition="45% center"
+                src="/gallery/djmobangs-portrait.jpeg"
+                objectPosition="center"
               />
             </div>
           </Reveal>

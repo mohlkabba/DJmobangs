@@ -43,8 +43,8 @@ const items: Item[] = [
     category: "Clubs",
     variant: "cool",
     span: "md:col-span-5 aspect-[4/3]",
-    src: "/gallery/djmobangs-green-glow.jpeg",
-    objectPosition: "center 45%",
+    src: "/gallery/djmobangs-neon.jpeg",
+    objectPosition: "40% center",
   },
   {
     label: "Crowd Energy",
@@ -101,13 +101,13 @@ const items: Item[] = [
     objectPosition: "center 60%",
   },
   {
-    label: "Wedding Set",
+    label: "Late Set",
     caption: "After hours",
     category: "Private",
     variant: "deep",
     span: "md:col-span-6 aspect-[4/3]",
-    src: "/gallery/djmobangs-dancefloor.jpeg",
-    objectPosition: "center 55%",
+    src: "/gallery/djmobangs-noir.jpeg",
+    objectPosition: "center 35%",
   },
 ];
 
