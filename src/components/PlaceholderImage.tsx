@@ -10,6 +10,8 @@ type Props = {
   src?: string;
   alt?: string;
   objectPosition?: string;
+  /** Hide the text overlay — for small tiles that provide their own caption. */
+  plain?: boolean;
 };
 
 const variants = {
@@ -32,6 +34,7 @@ export function PlaceholderImage({
   src,
   alt,
   objectPosition = "center",
+  plain = false,
 }: Props) {
   return (
     <div
@@ -72,22 +75,24 @@ export function PlaceholderImage({
         }}
       />
       {/* caption */}
-      <div className="absolute inset-0 p-6 flex flex-col justify-between">
-        <div className="flex items-start justify-between text-[10px] font-mono uppercase tracking-wide3 text-bone/60">
-          <span>DJ_MOBANGS / {label.toUpperCase()}</span>
-          {index !== undefined && (
-            <span>
-              {String(index).padStart(2, "0")} — IMG
-            </span>
-          )}
+      {!plain && (
+        <div className="absolute inset-0 p-6 flex flex-col justify-between">
+          <div className="flex items-start justify-between text-[10px] font-mono uppercase tracking-wide3 text-bone/60">
+            <span>DJ_MOBANGS / {label.toUpperCase()}</span>
+            {index !== undefined && (
+              <span>
+                {String(index).padStart(2, "0")} — IMG
+              </span>
+            )}
+          </div>
+          <div>
+            <p className="display text-3xl md:text-4xl text-bone/95">{label}</p>
+            {caption && (
+              <p className="editorial-italic text-bone/55 mt-1">{caption}</p>
+            )}
+          </div>
         </div>
-        <div>
-          <p className="display text-3xl md:text-4xl text-bone/95">{label}</p>
-          {caption && (
-            <p className="editorial-italic text-bone/55 mt-1">{caption}</p>
-          )}
-        </div>
-      </div>
+      )}
       {/* corner ticks */}
       <span className="absolute top-3 left-3 w-3 h-3 border-t border-l border-gold/60" />
       <span className="absolute top-3 right-3 w-3 h-3 border-t border-r border-gold/60" />

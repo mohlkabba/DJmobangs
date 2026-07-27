@@ -33,7 +33,7 @@ const items: Item[] = [
     caption: "First dance",
     category: "Weddings",
     variant: "deep",
-    span: "md:col-span-5 aspect-[4/3]",
+    span: "md:col-span-5 aspect-[4/5] md:aspect-[4/3]",
     src: "/gallery/djmobangs-wedding-mic.jpeg",
     objectPosition: "center 30%",
   },
@@ -42,7 +42,7 @@ const items: Item[] = [
     caption: "Peak hour - 02:14",
     category: "Clubs",
     variant: "cool",
-    span: "md:col-span-5 aspect-[4/3]",
+    span: "md:col-span-5 aspect-[4/5] md:aspect-[4/3]",
     src: "/gallery/djmobangs-neon.jpeg",
     objectPosition: "40% center",
   },
@@ -51,7 +51,7 @@ const items: Item[] = [
     caption: "Hands in the air",
     category: "Crowds",
     variant: "warm",
-    span: "md:col-span-4 aspect-square",
+    span: "md:col-span-4 aspect-[4/5] md:aspect-square",
     src: "/gallery/djmobangs-dancefloor.jpeg",
     objectPosition: "center 35%",
   },
@@ -60,7 +60,7 @@ const items: Item[] = [
     caption: "Festival main stage",
     category: "Festivals",
     variant: "deep",
-    span: "md:col-span-4 aspect-square",
+    span: "md:col-span-4 aspect-[4/5] md:aspect-square",
     src: "/gallery/djmobangs-decks.jpeg",
     objectPosition: "52% center",
   },
@@ -69,7 +69,7 @@ const items: Item[] = [
     caption: "The reception",
     category: "Weddings",
     variant: "warm",
-    span: "md:col-span-4 aspect-square",
+    span: "md:col-span-4 aspect-[4/5] md:aspect-square",
     src: "/gallery/djmobangs-reception.jpeg",
     objectPosition: "center 40%",
   },
@@ -78,7 +78,7 @@ const items: Item[] = [
     caption: "Booth POV",
     category: "Clubs",
     variant: "cool",
-    span: "md:col-span-7 aspect-[16/10]",
+    span: "md:col-span-7 aspect-[4/5] md:aspect-[16/10]",
     src: "/gallery/djmobangs-booth.jpeg",
     objectPosition: "45% center",
   },
@@ -87,7 +87,7 @@ const items: Item[] = [
     caption: "The drop",
     category: "Crowds",
     variant: "deep",
-    span: "md:col-span-5 aspect-[5/6]",
+    span: "md:col-span-5 aspect-[4/5] md:aspect-[5/6]",
     src: "/gallery/djmobangs-wedding-mic.jpeg",
     objectPosition: "40% center",
   },
@@ -96,7 +96,7 @@ const items: Item[] = [
     caption: "Sunrise set",
     category: "Private",
     variant: "warm",
-    span: "md:col-span-6 aspect-[4/3]",
+    span: "md:col-span-6 aspect-[4/5] md:aspect-[4/3]",
     src: "/gallery/djmobangs-green-glow.jpeg",
     objectPosition: "center 60%",
   },
@@ -105,7 +105,7 @@ const items: Item[] = [
     caption: "After hours",
     category: "Private",
     variant: "deep",
-    span: "md:col-span-6 aspect-[4/3]",
+    span: "md:col-span-6 aspect-[4/5] md:aspect-[4/3]",
     src: "/gallery/djmobangs-noir.jpeg",
     objectPosition: "center 35%",
   },
@@ -162,19 +162,20 @@ export function GalleryMosaic() {
                 index={i + 1}
                 src={it.src}
                 objectPosition={it.objectPosition}
+                plain
               />
               <div className="absolute inset-0 bg-ink/0 group-hover:bg-ink/40 transition-colors duration-500" />
-              <figcaption className="absolute inset-x-0 bottom-0 p-4 md:p-5 translate-y-2 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500">
+              <figcaption className="absolute inset-x-0 bottom-0 p-4 md:p-5 transition-all duration-500 md:translate-y-2 md:opacity-0 md:group-hover:translate-y-0 md:group-hover:opacity-100">
                 <div className="flex items-end justify-between gap-3">
-                  <div>
-                    <p className="display text-xl md:text-2xl text-bone">
+                  <div className="min-w-0">
+                    <p className="display text-lg sm:text-xl md:text-2xl text-bone">
                       {it.label}
                     </p>
-                    <p className="editorial-italic text-sm text-bone/70">
+                    <p className="editorial-italic text-xs sm:text-sm text-bone/70">
                       {it.caption}
                     </p>
                   </div>
-                  <span className="text-xs font-mono text-gold tracking-wide2">
+                  <span className="text-[10px] md:text-xs font-mono text-gold tracking-wide2">
                     {String(i + 1).padStart(2, "0")}
                   </span>
                 </div>
