@@ -17,6 +17,10 @@ export function reviewResponse(type, id, destinations) {
     const permitted = ["g.page", "search.google.com", "maps.google.com", "www.google.com", "google.com", "maps.app.goo.gl"];
     if (typeof target !== "string" || url.protocol !== "https:" || !permitted.includes(url.hostname) ||
         url.username || url.password || url.port) throw new Error("Invalid destination");
+    // google.com hosts also serve redirectors (/url, /amp) that forward to any site; allow only Maps, Search and review paths.
+    if (url.hostname.endsWith("google.com") && !["", "maps", "search", "local"].includes(url.pathname.split("/")[1])) {
+      throw new Error("Invalid destination");
+    }
     return new Response(null, { status: 302, headers: { ...headers, Location: url.href } });
   } catch {
     return new Response("This review link is temporarily unavailable. Please ask the business for its Google review link.", {

@@ -12,15 +12,21 @@ take effect after a successful Vercel production deployment. All units begin una
    with the full HTTPS Google review link in double quotes. Preserve all other entries.
    Example structure: "s/001": "YOUR_ACTUAL_GOOGLE_REVIEW_LINK"
    Do not deploy that placeholder.
-4. Save the change on a branch, review it, and merge when ready for production.
-5. Wait for Vercel to deploy successfully. Check the production URL and its destination.
-6. In NFC Tools choose Write, Add a record, URL / URI. Write the exact printed
+4. Run node --test tests/review-links.test.mjs. It checks every configured
+   destination and names any unit whose link would be rejected.
+5. Save the change on a branch, review it, and merge when ready for production.
+6. Wait for Vercel to deploy successfully. Check the production URL and its destination.
+7. In NFC Tools choose Write, Add a record, URL / URI. Write the exact printed
    address (for example https://www.djmobangs.com/s/001) to that unit's NFC chip.
-7. Test NFC and QR separately on customer phones.
+8. Test NFC and QR separately on customer phones.
 
 Destinations must use HTTPS and one of the Google hosts listed in
-src/lib/review-response.mjs. This validates the host, not that it is the correct
-business or review form; manually test every destination.
+src/lib/review-response.mjs. On google.com hosts only Maps, Search and review
+paths are accepted. Links beginning https://www.google.com/url?q= are rejected:
+they are Google's wrapper around a link copied from an email or search result,
+so copy the link from Google Business Profile (Ask for reviews) instead.
+This validates the host and path, not that it is the correct business or review
+form; manually test every destination.
 
 Use null to unassign a unit. Invalid IDs return 404, unassigned IDs show an
 activation message, and invalid destinations return 503 without redirecting.
